@@ -6,32 +6,28 @@
     <title>Chat Privado</title>
 
     <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '277386131662358');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=277386131662358&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '277386131662358');
+      fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=277386131662358&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Meta Pixel Code -->
 
     <style>
       * {
         box-sizing: border-box;
-        font-family:
-          system-ui,
-          -apple-system,
-          BlinkMacSystemFont,
-          "Segoe UI",
-          sans-serif;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       }
 
       body {
@@ -41,6 +37,7 @@ src="https://www.facebook.com/tr?id=277386131662358&ev=PageView&noscript=1"
         display: flex;
         align-items: center;
         justify-content: center;
+        padding-bottom: 90px;
       }
 
       .card {
@@ -106,14 +103,6 @@ src="https://www.facebook.com/tr?id=277386131662358&ev=PageView&noscript=1"
         font-weight: 700;
         cursor: pointer;
         color: #fff;
-        transition:
-          transform 0.1s ease,
-          opacity 0.1s ease;
-      }
-
-      .btn:hover {
-        transform: translateY(-1px);
-        opacity: 0.95;
       }
 
       .facebook {
@@ -135,6 +124,23 @@ src="https://www.facebook.com/tr?id=277386131662358&ev=PageView&noscript=1"
         cursor: pointer;
         color: #333;
       }
+
+      /* Sticky Smart Link */
+      .sticky-ad {
+        position: fixed;
+        bottom: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #16a34a;
+        color: #fff;
+        padding: 14px 24px;
+        border-radius: 999px;
+        font-size: 16px;
+        font-weight: 800;
+        text-decoration: none;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        z-index: 9999;
+      }
     </style>
   </head>
 
@@ -142,42 +148,55 @@ src="https://www.facebook.com/tr?id=277386131662358&ev=PageView&noscript=1"
     <div class="card">
       <div class="header">
         <img src="samclef.jpeg" alt="Perfil" class="avatar" />
-
         <div class="status">
           <span class="dot"></span>
           <span>Online agora</span>
         </div>
       </div>
 
-      <h1 class="headline">Estou online. Vamos ter um chat privado.</h1>
+      <h1 class="headline">
+        Estou online agora. Vamos ter uma conversa privada.
+      </h1>
 
       <div class="actions">
         <button class="btn facebook" id="facebookBtn">
-          💬 Converse comigo no Facebook
+          💬 Converse comigo agora
         </button>
 
         <button class="btn whatsapp" id="whatsappBtn">
-          📹 Faça uma chamada de vídeo comigo no WhatsApp
+          📹 Faça uma chamada de vídeo
         </button>
       </div>
 
       <button class="back" id="backBtn">
-        ← Não estou interessado, voltar
+        ← Não estou interessado
       </button>
     </div>
+
+    <!-- Sticky CTA -->
+    <a
+      href="https://otieu.com/4/10532479"
+      class="sticky-ad"
+      onclick="fbq('track','Lead',{source:'sticky_ad'})"
+    >
+      🔥 Continuar para o chat
+    </a>
 
     <script>
       const offerLink = "https://otieu.com/4/10532479";
 
       document.getElementById("facebookBtn").addEventListener("click", () => {
+        fbq('track','Lead',{source:'facebook_button'});
         window.location.href = offerLink;
       });
 
       document.getElementById("whatsappBtn").addEventListener("click", () => {
+        fbq('track','Lead',{source:'whatsapp_button'});
         window.location.href = offerLink;
       });
 
       document.getElementById("backBtn").addEventListener("click", () => {
+        fbq('track','BackClick');
         window.location.href = offerLink;
       });
     </script>
