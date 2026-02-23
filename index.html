@@ -1,11 +1,11 @@
-<!doctype html>A
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chat Privado</title>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat Privado</title>
 
-    <!-- Meta Pixel Code -->
+  <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -15,186 +15,127 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '277386131662358');
+fbq('init', '2741446872871317');
 fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=277386131662358&ev=PageView&noscript=1"
+src="https://www.facebook.com/tr?id=2741446872871317&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-    
-    <style>
-      * {
-        box-sizing: border-box;
-        font-family:
-          system-ui,
-          -apple-system,
-          BlinkMacSystemFont,
-          "Segoe UI",
-          sans-serif;
-      }
 
-      body {
-        margin: 0;
-        min-height: 100vh;
-        background: linear-gradient(135deg, #f2f6f7, #fdf1f1);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+<style>
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:#f4f4f4;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
 
-      .card {
-        background: #fff;
-        width: 95%;
-        max-width: 480px;
-        padding: 24px;
-        border-radius: 16px;
-        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
-      }
+.card{
+  background:#fff;
+  width:420px;
+  border-radius:18px;
+  padding:25px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
 
-      .header {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 16px;
-      }
+.header{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
 
-      .avatar {
-        width: 56px;
-        height: 56px;
-        border-radius: 50%;
-        object-fit: cover;
-      }
+.avatar{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  object-fit:cover;
+}
 
-      .status {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        background: #eaf7ee;
-        padding: 6px 12px;
-        border-radius: 999px;
-        font-size: 14px;
-        color: #1b7f3a;
-        font-weight: 600;
-      }
+.online{
+  background:#e6f7ee;
+  color:#1aa34a;
+  padding:6px 12px;
+  border-radius:20px;
+  font-size:14px;
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
 
-      .dot {
-        width: 10px;
-        height: 10px;
-        background: #22c55e;
-        border-radius: 50%;
-      }
+.dot{
+  width:8px;
+  height:8px;
+  background:#1aa34a;
+  border-radius:50%;
+}
 
-      .headline {
-        font-size: 26px;
-        font-weight: 800;
-        margin: 20px 0 28px;
-        color: #111;
-      }
+h1{
+  font-size:26px;
+  margin:20px 0;
+}
 
-      .actions {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-      }
+.btn{
+  display:block;
+  text-align:center;
+  padding:16px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
+  margin-bottom:14px;
+}
 
-      .btn {
-        border: none;
-        padding: 16px;
-        border-radius: 12px;
-        font-size: 16px;
-        font-weight: 700;
-        cursor: pointer;
-        color: #fff;
-        transition:
-          transform 0.1s ease,
-          opacity 0.1s ease;
-      }
+.facebook{
+  background:#1fa64a;
+  color:#fff;
+}
 
-      .btn:hover {
-        transform: translateY(-1px);
-        opacity: 0.95;
-      }
+.whatsapp{
+  background:#e22b2b;
+  color:#fff;
+}
 
-      .facebook {
-        background: #16a34a;
-      }
+.back{
+  display:block;
+  text-align:center;
+  padding:14px;
+  border-radius:10px;
+  border:1px solid #ddd;
+  text-decoration:none;
+  color:#333;
+  background:#fafafa;
+}
+</style>
+</head>
 
-      .whatsapp {
-        background: #dc2626;
-      }
+<body>
 
-      .back {
-        margin-top: 24px;
-        background: transparent;
-        border: 1px solid #ddd;
-        padding: 14px;
-        width: 100%;
-        border-radius: 12px;
-        font-size: 15px;
-        cursor: pointer;
-        color: #333;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="card">
-      <div class="header">
-        <img src="samclef.jpeg" alt="Perfil" class="avatar" />
-
-        <div class="status">
-          <span class="dot"></span>
-          <span>Online agora</span>
-        </div>
-      </div>
-
-      <h1 class="headline">Estou online. Vamos ter um chat privado.</h1>
-
-      <div class="actions">
-        <button class="btn facebook" id="facebookBtn">
-          💬 Converse comigo no Facebook
-        </button>
-
-        <button class="btn whatsapp" id="whatsappBtn">
-          📹 Faça uma chamada de vídeo comigo no WhatsApp
-        </button>
-      </div>
-
-      <button class="back" id="backBtn">
-        ← Não estou interessado, voltar
-      </button>
+<div class="card">
+  <div class="header">
+    <img class="avatar" src="samclef.jpeg" alt="profile">
+    <div class="online">
+      <div class="dot"></div>
+      Online agora
     </div>
+  </div>
 
-    <script>
-      const offerLink = "https://otieu.com/4/10532479";
+  <h1>Estou online. Vamos ter um chat privado.</h1>
 
-      document.getElementById("facebookBtn").addEventListener("click", () => {
-        window.location.href = offerLink;
-      });
+  <a href="https://omg10.com/4/10642075" class="btn facebook">
+    💬 Converse comigo no Facebook
+  </a>
 
-      document.getElementById("whatsappBtn").addEventListener("click", () => {
-        window.location.href = offerLink;
-      });
+  <a href="https://omg10.com/4/10642075" class="btn whatsapp">
+    📹 Faça uma chamada de vídeo comigo no WhatsApp
+  </a>
 
-      document.getElementById("backBtn").addEventListener("click", () => {
-        window.location.href = offerLink;
-      });
-    </script>
-    <script>
-  const smartLinkB = "https://otieu.com/4/10580749";
+  <a href="https://omg10.com/4/10642075" class="back">
+    ← Não estou interessado, voltar
+  </a>
+</div>
 
-  function trapBack() {
-    history.pushState(null, "", location.href);
-  }
-
-  trapBack();
-  trapBack();
-
-  window.addEventListener("popstate", function () {
-    window.location.href = smartLinkB;
-  });
-</script>
-
-  </body>
+</body>
 </html>
